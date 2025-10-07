@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RaveAlts - Minecraft Account Manager",
+  title: "RaveAlts - Minecraft Account Shop",
   description:
-    "Modern and clean Minecraft alternative account manager with a beautiful pink and black theme",
+    "discord.gg/ravealts best and cheapest minecraft account/alt shop ",
 };
 
 export default function RootLayout({
