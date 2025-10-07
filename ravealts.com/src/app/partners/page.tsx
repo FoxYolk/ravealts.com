@@ -260,10 +260,10 @@ export default function Partners() {
                 href="https://riseclient.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark hover:scale-105 hover:shadow-xl hover:shadow-primary/25 h-11 px-8 py-6 gap-2 group animate-glow animate-fade-in-up animation-delay-400"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark hover:scale-105 hover:shadow-xl hover:shadow-primary/25 h-11 px-8 py-6 gap-2 group animate-glow"
               >
                 <ShoppingCart className="w-5 h-5 group-hover:animate-bounce" />
-                Buy Rise Now - $29
+                Buy Rise Now - $35
               </a>
             </div>
           </div>

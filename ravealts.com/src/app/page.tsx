@@ -19,6 +19,7 @@ import {
 import Link from "next/link";
 import { ScrollTrigger } from "@/components/scroll-trigger";
 import { ParticleSystem } from "@/components/particle-system";
+import { TextReveal } from "@/components/text-reveal";
 
 export default function Home() {
   return (
@@ -112,6 +113,15 @@ export default function Home() {
         
         {/* Complex Particle System */}
         <ParticleSystem particleCount={25} />
+        
+        {/* Advanced Particle Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="particle-advanced particle-advanced-1" style={{ top: '20%', left: '10%' }}></div>
+          <div className="particle-advanced particle-advanced-2" style={{ top: '30%', right: '15%' }}></div>
+          <div className="particle-advanced particle-advanced-3" style={{ bottom: '25%', left: '20%' }}></div>
+          <div className="particle-advanced particle-advanced-1" style={{ bottom: '40%', right: '25%' }}></div>
+          <div className="particle-advanced particle-advanced-2" style={{ top: '60%', left: '70%' }}></div>
+        </div>
         <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
@@ -119,39 +129,43 @@ export default function Home() {
               Premium Minecraft Accounts - Only $0.08 Each!
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in-up animation-delay-200">
-              Level Up Your
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark animate-gradient-x text-shimmer text-glow">
-                {" "}
-                Minecraft
-              </span>
-              <br />
-              Experience
-            </h1>
+            <TextReveal direction="up" delay={200}>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
+                Level Up Your
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark animate-gradient-x text-shimmer text-glow typography-enhanced">
+                  {" "}
+                  Minecraft
+                </span>
+                <br />
+                Experience
+              </h1>
+            </TextReveal>
 
             <p className="text-xl text-muted mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-400">
               Get instant access to premium Minecraft accounts with full access
               to all features. Secure, reliable, and ready to use.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
-              <a
-                href="https://rave.sellhub.cx/product/c/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark magnetic-hover ripple-effect h-11 px-8 py-6 gap-2 group animate-glow"
-                title="Having issues? Try our backup store at rave.mysellauth.com"
-              >
-                <ShoppingCart className="w-5 h-5 group-hover:animate-bounce" />
-                Purchase Credits
-              </a>
-              <a
-                href="#features"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 border border-border bg-transparent hover:bg-secondary elastic-hover ripple-effect h-11 px-8 py-6 gap-2 group"
-              >
-                <span className="group-hover:animate-pulse">Learn More</span>
-              </a>
-            </div>
+            <TextReveal direction="up" delay={600}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://rave.sellhub.cx/product/c/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark magnetic-hover-advanced btn-enhanced ripple-effect h-11 px-8 py-6 gap-2 group animate-glow"
+                  title="Having issues? Try our backup store at rave.mysellauth.com"
+                >
+                  <ShoppingCart className="w-5 h-5 group-hover:animate-bounce" />
+                  Purchase Credits
+                </a>
+                <a
+                  href="#features"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 border border-border bg-transparent hover:bg-secondary magnetic-hover-advanced btn-enhanced ripple-effect h-11 px-8 py-6 gap-2 group"
+                >
+                  <span className="group-hover:animate-pulse">Learn More</span>
+                </a>
+              </div>
+            </TextReveal>
             
           </div>
         </div>
@@ -169,8 +183,15 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-card/20">
-        <div className="container mx-auto px-4">
+      <section id="features" className="py-20 bg-card/20 relative overflow-hidden">
+        {/* Scroll-triggered floating elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full animate-float scroll-floating-element"></div>
+          <div className="absolute top-40 right-20 w-3 h-3 bg-primary-dark/30 rounded-full animate-float animation-delay-1000 scroll-floating-element"></div>
+          <div className="absolute bottom-20 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float animation-delay-2000 scroll-floating-element"></div>
+          <div className="absolute bottom-40 right-1/3 w-5 h-5 bg-primary-dark/10 rounded-full animate-float animation-delay-3000 scroll-floating-element"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Why Choose RaveAlts?
@@ -183,12 +204,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollTrigger animation="scale" delay={0}>
-              <Card className="card-advanced glassmorphism">
+              <Card className="card-enhanced glassmorphism morphing-element glow-enhanced">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
                     <Shield className="w-6 h-6 text-primary group-hover:animate-bounce" />
                   </div>
-                  <CardTitle className="group-hover:text-primary transition-colors text-glow">100% Secure</CardTitle>
+                  <CardTitle className="group-hover:text-primary transition-colors text-glow typography-enhanced">100% Secure</CardTitle>
                   <CardDescription>
                     All accounts are verified and secure with full access to
                     Minecraft features
@@ -198,7 +219,7 @@ export default function Home() {
             </ScrollTrigger>
 
             <ScrollTrigger animation="scale" delay={200}>
-              <Card className="card-advanced glassmorphism">
+              <Card className="card-enhanced glassmorphism morphing-element glow-enhanced">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
                     <Zap className="w-6 h-6 text-green-500 group-hover:animate-bounce" />
@@ -213,7 +234,7 @@ export default function Home() {
             </ScrollTrigger>
 
             <ScrollTrigger animation="scale" delay={400}>
-              <Card className="card-advanced glassmorphism">
+              <Card className="card-enhanced glassmorphism morphing-element glow-enhanced">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
                     <Users className="w-6 h-6 text-blue-500 group-hover:animate-bounce" />
@@ -227,7 +248,7 @@ export default function Home() {
             </ScrollTrigger>
 
             <ScrollTrigger animation="scale" delay={600}>
-              <Card className="card-advanced glassmorphism">
+              <Card className="card-enhanced glassmorphism morphing-element glow-enhanced">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
                     <Crown className="w-6 h-6 text-purple-500 group-hover:animate-bounce" />
@@ -241,7 +262,7 @@ export default function Home() {
             </ScrollTrigger>
 
             <ScrollTrigger animation="scale" delay={800}>
-              <Card className="card-advanced glassmorphism">
+              <Card className="card-enhanced glassmorphism morphing-element glow-enhanced">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
                     <Lock className="w-6 h-6 text-orange-500 group-hover:animate-bounce" />
@@ -256,7 +277,7 @@ export default function Home() {
             </ScrollTrigger>
 
             <ScrollTrigger animation="scale" delay={1000}>
-              <Card className="card-advanced glassmorphism">
+              <Card className="card-enhanced glassmorphism morphing-element glow-enhanced">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
                     <Clock className="w-6 h-6 text-pink-500 group-hover:animate-bounce" />
