@@ -47,9 +47,16 @@ export default function Partners() {
                 <Link
                   href="/"
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 text-muted hover:text-primary hover:scale-110 px-4 py-2"
-                  title="Back to Home"
+                  title="Home"
                 >
                   Home
+                </Link>
+                <Link
+                  href="/media"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 text-muted hover:text-primary hover:scale-110 px-4 py-2"
+                  title="View Media"
+                >
+                  Media
                 </Link>
                 <a
                   href="https://discord.gg/syqY7ZNAKM"
@@ -86,7 +93,7 @@ export default function Partners() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
               <Crown className="w-4 h-4 animate-pulse" />
-              2025 RaveAlts
+              2025 RaveAlts Partners
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in-up animation-delay-200">

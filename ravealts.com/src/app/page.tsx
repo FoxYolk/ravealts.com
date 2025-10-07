@@ -16,6 +16,7 @@ import {
   Clock,
   ChevronDown,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -43,20 +44,20 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-3">
-                <a
+                <Link
                   href="/media"
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 text-muted hover:text-primary hover:scale-110 px-4 py-2"
                   title="View Media"
                 >
                   Media
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/partners"
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 text-muted hover:text-primary hover:scale-110 px-4 py-2"
                   title="View Partners"
                 >
                   Partners
-                </a>
+                </Link>
                 <a
                   href="https://discord.gg/syqY7ZNAKM"
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 text-muted hover:text-primary hover:scale-110 w-10 h-10"
