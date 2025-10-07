@@ -17,6 +17,8 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
+import { ScrollTrigger } from "@/components/scroll-trigger";
+import { ParticleSystem } from "@/components/particle-system";
 
 export default function Home() {
   return (
@@ -98,7 +100,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-mesh">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-dark/5" />
         
         {/* Animated Background Elements */}
@@ -108,13 +110,8 @@ export default function Home() {
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary/5 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
         </div>
         
-        {/* Floating Particles */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-float"></div>
-          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-primary-dark/40 rounded-full animate-float animation-delay-1000"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-primary/20 rounded-full animate-float animation-delay-2000"></div>
-          <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-primary-dark/30 rounded-full animate-float animation-delay-3000"></div>
-        </div>
+        {/* Complex Particle System */}
+        <ParticleSystem particleCount={25} />
         <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
@@ -124,7 +121,7 @@ export default function Home() {
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in-up animation-delay-200">
               Level Up Your
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark animate-gradient-x">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark animate-gradient-x text-shimmer text-glow">
                 {" "}
                 Minecraft
               </span>
@@ -142,7 +139,7 @@ export default function Home() {
                 href="https://rave.sellhub.cx/product/c/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark hover:scale-105 hover:shadow-xl hover:shadow-primary/25 h-11 px-8 py-6 gap-2 group animate-glow"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark magnetic-hover ripple-effect h-11 px-8 py-6 gap-2 group animate-glow"
                 title="Having issues? Try our backup store at rave.mysellauth.com"
               >
                 <ShoppingCart className="w-5 h-5 group-hover:animate-bounce" />
@@ -150,7 +147,7 @@ export default function Home() {
               </a>
               <a
                 href="#features"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 border border-border bg-transparent hover:bg-secondary hover:scale-105 hover:shadow-lg h-11 px-8 py-6 gap-2 group"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 border border-border bg-transparent hover:bg-secondary elastic-hover ripple-effect h-11 px-8 py-6 gap-2 group"
               >
                 <span className="group-hover:animate-pulse">Learn More</span>
               </a>
@@ -185,80 +182,92 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-scale-in">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
-                  <Shield className="w-6 h-6 text-primary group-hover:animate-bounce" />
-                </div>
-                <CardTitle className="group-hover:text-primary transition-colors">100% Secure</CardTitle>
-                <CardDescription>
-                  All accounts are verified and secure with full access to
-                  Minecraft features
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <ScrollTrigger animation="scale" delay={0}>
+              <Card className="card-advanced glassmorphism">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
+                    <Shield className="w-6 h-6 text-primary group-hover:animate-bounce" />
+                  </div>
+                  <CardTitle className="group-hover:text-primary transition-colors text-glow">100% Secure</CardTitle>
+                  <CardDescription>
+                    All accounts are verified and secure with full access to
+                    Minecraft features
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </ScrollTrigger>
 
-            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-scale-in animation-delay-200">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
-                  <Zap className="w-6 h-6 text-green-500 group-hover:animate-bounce" />
-                </div>
-                <CardTitle className="group-hover:text-green-500 transition-colors">Instant Delivery</CardTitle>
-                <CardDescription>
-                  Get your accounts immediately after purchase - no waiting
-                  required
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <ScrollTrigger animation="scale" delay={200}>
+              <Card className="card-advanced glassmorphism">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
+                    <Zap className="w-6 h-6 text-green-500 group-hover:animate-bounce" />
+                  </div>
+                  <CardTitle className="group-hover:text-green-500 transition-colors">Instant Delivery</CardTitle>
+                  <CardDescription>
+                    Get your accounts immediately after purchase - no waiting
+                    required
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </ScrollTrigger>
 
-            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-scale-in animation-delay-400">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
-                  <Users className="w-6 h-6 text-blue-500 group-hover:animate-bounce" />
-                </div>
-                <CardTitle className="group-hover:text-blue-500 transition-colors">24/7 Support</CardTitle>
-                <CardDescription>
-                  Our dedicated support team is always ready to help you
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <ScrollTrigger animation="scale" delay={400}>
+              <Card className="card-advanced glassmorphism">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
+                    <Users className="w-6 h-6 text-blue-500 group-hover:animate-bounce" />
+                  </div>
+                  <CardTitle className="group-hover:text-blue-500 transition-colors">24/7 Support</CardTitle>
+                  <CardDescription>
+                    Our dedicated support team is always ready to help you
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </ScrollTrigger>
 
-            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-scale-in animation-delay-600">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
-                  <Crown className="w-6 h-6 text-purple-500 group-hover:animate-bounce" />
-                </div>
-                <CardTitle className="group-hover:text-purple-500 transition-colors">Premium Quality</CardTitle>
-                <CardDescription>
-                  Only the highest quality accounts with full Minecraft access
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <ScrollTrigger animation="scale" delay={600}>
+              <Card className="card-advanced glassmorphism">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
+                    <Crown className="w-6 h-6 text-purple-500 group-hover:animate-bounce" />
+                  </div>
+                  <CardTitle className="group-hover:text-purple-500 transition-colors">Premium Quality</CardTitle>
+                  <CardDescription>
+                    Only the highest quality accounts with full Minecraft access
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </ScrollTrigger>
 
-            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-scale-in animation-delay-800">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
-                  <Lock className="w-6 h-6 text-orange-500 group-hover:animate-bounce" />
-                </div>
-                <CardTitle className="group-hover:text-orange-500 transition-colors">Warranty</CardTitle>
-                <CardDescription>
-                  All accounts come with warranty protection for your peace of
-                  mind
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <ScrollTrigger animation="scale" delay={800}>
+              <Card className="card-advanced glassmorphism">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
+                    <Lock className="w-6 h-6 text-orange-500 group-hover:animate-bounce" />
+                  </div>
+                  <CardTitle className="group-hover:text-orange-500 transition-colors">Warranty</CardTitle>
+                  <CardDescription>
+                    All accounts come with warranty protection for your peace of
+                    mind
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </ScrollTrigger>
 
-            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-scale-in animation-delay-1000">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
-                  <Clock className="w-6 h-6 text-pink-500 group-hover:animate-bounce" />
-                </div>
-                <CardTitle className="group-hover:text-pink-500 transition-colors">Always Available</CardTitle>
-                <CardDescription>
-                  Large stock available 24/7 - never run out of accounts
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <ScrollTrigger animation="scale" delay={1000}>
+              <Card className="card-advanced glassmorphism">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-4 group-hover:animate-pulse">
+                    <Clock className="w-6 h-6 text-pink-500 group-hover:animate-bounce" />
+                  </div>
+                  <CardTitle className="group-hover:text-pink-500 transition-colors">Always Available</CardTitle>
+                  <CardDescription>
+                    Large stock available 24/7 - never run out of accounts
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </ScrollTrigger>
           </div>
         </div>
       </section>
@@ -266,45 +275,47 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary-dark/10 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
-            {/* Animated background elements */}
-            <div className="absolute inset-0">
-              <div className="absolute top-4 right-4 w-32 h-32 bg-primary/5 rounded-full animate-float"></div>
-              <div className="absolute bottom-4 left-4 w-24 h-24 bg-primary-dark/5 rounded-full animate-float animation-delay-2000"></div>
-            </div>
-            
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 animate-fade-in-up">
-                Ready to Get Started?
-              </h2>
-              <p className="text-xl text-muted mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-                Join thousands of satisfied customers and get your premium
-                Minecraft accounts today
-              </p>
+          <ScrollTrigger animation="fade-up">
+            <div className="glassmorphism-dark rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+              {/* Animated background elements */}
+              <div className="absolute inset-0">
+                <div className="absolute top-4 right-4 w-32 h-32 bg-primary/5 rounded-full animate-float"></div>
+                <div className="absolute bottom-4 left-4 w-24 h-24 bg-primary-dark/5 rounded-full animate-float animation-delay-2000"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-shimmer">
+                  Ready to Get Started?
+                </h2>
+                <p className="text-xl text-muted mb-8 max-w-2xl mx-auto">
+                  Join thousands of satisfied customers and get your premium
+                  Minecraft accounts today
+                </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
-                <a
-                  href="https://rave.sellhub.cx/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark hover:scale-105 hover:shadow-xl hover:shadow-primary/25 h-11 px-8 py-6 gap-2 group animate-glow"
-                  title="Having issues? Try our backup store at rave.mysellauth.com"
-                >
-                  <ShoppingCart className="w-5 h-5 group-hover:animate-bounce" />
-                  Purchase Credits
-                </a>
-                <a
-                  href="https://discord.gg/syqY7ZNAKM"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 border border-border bg-transparent hover:bg-secondary hover:scale-105 hover:shadow-lg h-11 px-8 py-6 gap-2 group"
-                >
-                  <FaDiscord className="w-5 h-5 group-hover:animate-bounce" />
-                  <span className="group-hover:animate-pulse">Discord</span>
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="https://rave.sellhub.cx/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark magnetic-hover ripple-effect h-11 px-8 py-6 gap-2 group animate-glow"
+                    title="Having issues? Try our backup store at rave.mysellauth.com"
+                  >
+                    <ShoppingCart className="w-5 h-5 group-hover:animate-bounce" />
+                    Purchase Credits
+                  </a>
+                  <a
+                    href="https://discord.gg/syqY7ZNAKM"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 border border-border bg-transparent hover:bg-secondary elastic-hover ripple-effect h-11 px-8 py-6 gap-2 group"
+                  >
+                    <FaDiscord className="w-5 h-5 group-hover:animate-bounce" />
+                    <span className="group-hover:animate-pulse">Discord</span>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollTrigger>
         </div>
       </section>
 

@@ -156,11 +156,11 @@ export default function Media() {
             {/* Authie Video */}
             <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-slide-in-left overflow-hidden">
               <div className="relative">
-                <div className="aspect-video relative">
+                <div className="aspect-video relative custom-video-container">
                   <iframe
                     src="https://www.youtube.com/embed/vRaKz0oVFn8?start=116&rel=0&modestbranding=1&showinfo=0"
                     title="Authie RaveAlts Review"
-                    className="w-full h-full rounded-t-lg"
+                    className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
@@ -208,11 +208,11 @@ export default function Media() {
             {/* widget347 Video */}
             <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-slide-in-right overflow-hidden">
               <div className="relative">
-                <div className="aspect-video relative">
+                <div className="aspect-video relative custom-video-container">
                   <iframe
                     src="https://www.youtube.com/embed/hK6FV43I6nU?start=8&rel=0&modestbranding=1&showinfo=0"
                     title="widget347 RaveAlts Review"
-                    className="w-full h-full rounded-t-lg"
+                    className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
@@ -260,11 +260,11 @@ export default function Media() {
             {/* purrorcode Video */}
             <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-fade-in-up animation-delay-400 overflow-hidden lg:col-span-2">
               <div className="relative">
-                <div className="aspect-video relative">
+                <div className="aspect-video relative custom-video-container">
                   <iframe
                     src="https://www.youtube.com/embed/APMkF25npoA?start=0&rel=0&modestbranding=1&showinfo=0"
                     title="purrorcode RaveAlts Review"
-                    className="w-full h-full rounded-t-lg"
+                    className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>

@@ -116,7 +116,7 @@ export default function Partners() {
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary-dark hover:scale-105 hover:shadow-xl hover:shadow-primary/25 h-11 px-8 py-6 gap-2 group animate-glow"
               >
                 <ShoppingCart className="w-5 h-5 group-hover:animate-bounce" />
-                Buy Now - $29
+                Buy Now - $35
               </a>
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function Partners() {
                 Ready to Dominate?
               </h2>
               <p className="text-xl text-muted mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-                Join 15,000+ satisfied customers and get Rise for just $29
+                Join 15,000+ satisfied customers and get Rise for just $35
               </p>
               <a
                 href="https://riseclient.com"
