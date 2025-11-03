@@ -152,9 +152,59 @@ export default function Media() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 max-w-8xl mx-auto">
+          {/* Featured Videos - raindots and Authie */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* raindots Video */}
+            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card overflow-hidden animate-fade-in-up">
+              <div className="relative">
+                <div className="aspect-video relative video-enhanced">
+                  <iframe
+                    src="https://www.youtube.com/embed/HRbvbHNES6E?start=171&rel=0&modestbranding=1&showinfo=0"
+                    title="raindots RaveAlts Content"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">
+                  <FaPlay className="w-3 h-3 inline mr-1" />
+                  YouTube
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center">
+                    <span className="text-white font-bold text-base">R</span>
+                  </div>
+                  <div>
+                    <CardTitle className="text-xl">raindots</CardTitle>
+                    <CardDescription className="text-base">Featured Creator</CardDescription>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 mt-4 text-sm text-muted">
+                  <div className="flex items-center gap-1">
+                    <Eye className="w-4 h-4" />
+                    <span>Featured Review</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    <span>Latest</span>
+                  </div>
+                </div>
+                <a
+                  href="https://youtu.be/HRbvbHNES6E?si=mAG6LuicqCVH2RR0&t=171"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-200 mt-3 text-base font-medium"
+                >
+                  <FaExternalLinkAlt className="w-4 h-4" />
+                  Watch on YouTube
+                </a>
+              </CardHeader>
+            </Card>
+
             {/* Authie Video */}
-            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-slide-in-left overflow-hidden">
+            <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card overflow-hidden animate-fade-in-up animation-delay-200">
               <div className="relative">
                 <div className="aspect-video relative video-enhanced">
                   <iframe
@@ -172,18 +222,18 @@ export default function Media() {
               </div>
               <CardHeader>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">A</span>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center">
+                    <span className="text-white font-bold text-base">A</span>
                   </div>
                   <div>
-                    <CardTitle className="text-lg">Authie</CardTitle>
-                    <CardDescription className="text-sm">Content Creator</CardDescription>
+                    <CardTitle className="text-xl">Authie</CardTitle>
+                    <CardDescription className="text-base">Featured Creator</CardDescription>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-4 text-sm text-muted">
                   <div className="flex items-center gap-1">
                     <Eye className="w-4 h-4" />
-                    <span>Review</span>
+                    <span>Featured Review</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
@@ -194,14 +244,16 @@ export default function Media() {
                   href="https://youtu.be/vRaKz0oVFn8?si=U6rTTuMQDjA5AP04&t=116"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-200 mt-3 text-sm font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-200 mt-3 text-base font-medium"
                 >
-                  <FaExternalLinkAlt className="w-3 h-3" />
+                  <FaExternalLinkAlt className="w-4 h-4" />
                   Watch on YouTube
                 </a>
               </CardHeader>
             </Card>
+          </div>
 
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 max-w-8xl mx-auto">
             {/* widget347 Video */}
             <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 interactive-card animate-slide-in-right overflow-hidden">
               <div className="relative">
